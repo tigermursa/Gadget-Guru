@@ -12,16 +12,17 @@ import {
 } from "@nextui-org/react";
 import React from "react";
 import { FaShoppingCart } from "react-icons/fa";
+
 const NavigationBar = () => {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
   const menuItems = [
-    "Home",
-    "Categories",
-    "Products",
-    "Flash Sale",
-    "About Us",
-    "Contact Us",
+    { text: "Home", href: "/" },
+    { text: "Categories", href: "#" },
+    { text: "Products", href: "#" },
+    { text: "Flash Sale", href: "#" },
+    { text: "About Us", href: "/about" },
+    { text: "Contact Us", href: "#" },
   ];
 
   return (
@@ -40,7 +41,7 @@ const NavigationBar = () => {
 
       <NavbarContent className="hidden sm:flex gap-6  ms-20">
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="/">
             Home
           </Link>
         </NavbarItem>
@@ -61,7 +62,7 @@ const NavigationBar = () => {
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link color="foreground" href="#">
+          <Link color="foreground" href="/about">
             About Us
           </Link>
         </NavbarItem>
@@ -85,10 +86,10 @@ const NavigationBar = () => {
               //       : "foreground"
               //   }
               className="w-full text-gray-900"
-              href="#"
+              href={item.href}
               size="lg"
             >
-              {item}
+              {item.text}
             </Link>
           </NavbarMenuItem>
         ))}
