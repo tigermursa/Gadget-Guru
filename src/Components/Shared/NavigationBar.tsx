@@ -36,7 +36,7 @@ const NavigationBar = () => {
       <NavbarContent>
         <NavbarBrand>
           <p className="font-bold text-inherit text-xl">
-            Gadget<span className="text-green-500">Guru</span>
+            Gadget<span className="text-primary">Guru</span>
           </p>
         </NavbarBrand>
         <NavbarMenuToggle
@@ -52,8 +52,8 @@ const NavigationBar = () => {
             <Link
               className={
                 isActive(item.href)
-                  ? "text-green-500 font-bold"
-                  : "text-gray-900 font-semibold"
+                  ? "text-primary font-bold"
+                  : "text-blacks font-semibold"
               }
               href={item.href}
             >
