@@ -52,8 +52,8 @@ const NavigationBar = () => {
             <Link
               className={
                 isActive(item.href)
-                  ? "text-primary font-bold"
-                  : "text-blacks font-semibold"
+                  ? "text-blacks font-bold"
+                  : "text-gray-500  "
               }
               href={item.href}
             >
