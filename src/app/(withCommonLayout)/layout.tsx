@@ -1,11 +1,12 @@
-const CommonLayout = ({ children }: { children: React.ReactNode }) => {
+import NavigationBar from "@/Components/Shared/NavigationBar";
+
+const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
-      {/* Navbar */}
+      <NavigationBar />
       {children}
-      {/* footer */}
     </div>
   );
 };
 
-export default CommonLayout;
+export default layout;

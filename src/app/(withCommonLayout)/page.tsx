@@ -1,12 +1,9 @@
-import React from 'react';
-
-const MainPage = () => {
-    return (
-        <div>
-            {/* here will be all components */}
-            <p>Wait for making components</p>
-        </div>
-    );
+const HomePage = () => {
+  return (
+    <div>
+      <h1>I am the boss</h1>
+    </div>
+  );
 };
 
-export default MainPage;
+export default HomePage;
