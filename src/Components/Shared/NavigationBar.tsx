@@ -18,11 +18,11 @@ const NavigationBar = () => {
 
   const menuItems = [
     { text: "Home", href: "/home" },
-    { text: "Categories", href: "#" },
-    { text: "Products", href: "#" },
+    { text: "Categories", href: "/categories" },
+    { text: "Products", href: "products" },
     { text: "Flash Sale", href: "/flash-sale" },
     { text: "About Us", href: "/about" },
-    { text: "Contact Us", href: "#" },
+    { text: "Contact Us", href: "/contact" },
   ];
 
   const pathname = usePathname();
@@ -45,11 +45,16 @@ const NavigationBar = () => {
         />
       </NavbarContent>
 
+      {/* Nav items for larger device */}
       <NavbarContent className="hidden sm:flex gap-6 ms-20">
         {menuItems.map((item, index) => (
           <NavbarItem key={`${item}-${index}`}>
             <Link
-              color={isActive(item.href) ? "primary" : "foreground"}
+              className={
+                isActive(item.href)
+                  ? "text-green-500 font-bold"
+                  : "text-gray-900 font-semibold"
+              }
               href={item.href}
             >
               {item.text}
@@ -58,6 +63,7 @@ const NavigationBar = () => {
         ))}
       </NavbarContent>
 
+      {/* Nav items for small device */}
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>

@@ -4,7 +4,9 @@ const layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
       <NavigationBar />
-      {children}
+      <div className="border border-red-600 container mx-auto">
+        {children}
+      </div>
     </div>
   );
 };
