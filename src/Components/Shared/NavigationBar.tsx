@@ -19,7 +19,7 @@ const NavigationBar = () => {
   const menuItems = [
     { text: "Home", href: "/home" },
     { text: "Categories", href: "/categories" },
-    { text: "Products", href: "products" },
+    { text: "Products", href: "/products" },
     { text: "Flash Sale", href: "/flash-sale" },
     { text: "About Us", href: "/about" },
     { text: "Contact Us", href: "/contact" },
