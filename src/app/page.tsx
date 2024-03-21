@@ -1,11 +1,11 @@
 import { Button } from "@nextui-org/react";
 import { error } from "console";
+import MainPage from "./(withCommonLayout)/page";
 
 const HomePage = () => {
   return (
     <div>
-      <p>Testing that next ui is working or not</p>
-      <Button>Click me</Button>
+      <MainPage />
     </div>
   );
 };
