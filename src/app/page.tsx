@@ -1,4 +1,5 @@
 import { Button } from "@nextui-org/react";
+import { error } from "console";
 
 const HomePage = () => {
   return (
