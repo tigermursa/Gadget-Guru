@@ -116,7 +116,7 @@ const dbData = [
 
 const FlashSale = () => {
   return (
-    <div className="">
+    <div className=" mb-20">
       {/* TITLE */}
       <div className="flex justify-between ms-28 me-28 mb-10 ">
         <h1 className="font-semibold text-2xl">Flash Sale</h1>
@@ -189,9 +189,9 @@ const FlashSale = () => {
                     <Image
                       alt="Woman listing to music"
                       className="object-cover"
-                      height={300}
+                      height={280}
                       src={phone.image}
-                      width={300}
+                      width={280}
                     />
                   </div>
                 </div>
