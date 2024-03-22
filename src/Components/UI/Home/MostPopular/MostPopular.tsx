@@ -152,7 +152,7 @@ const MostPopular = () => {
       </div>
       {/* cards first row only */}
       <div className="flex justify-center mt-10  ">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-10">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 m-2 md:m-0">
           {dbData.map((phone, index) => (
             <div key={index} className="relative">
               <Card className="py-3 max-w-[200px] rounded-sm">
@@ -228,8 +228,6 @@ const MostPopular = () => {
           ))}
         </div>
       </div>
-
-
     </div>
   );
 };

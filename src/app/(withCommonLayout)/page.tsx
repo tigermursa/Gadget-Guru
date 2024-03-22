@@ -7,7 +7,6 @@ import BrandsMarquee from "@/Components/UI/Marquee/BrandsMarquee";
 const HomePage = () => {
   return (
     <div>
-      <HeroCarousel />
       <FlashSale />
       <TopCategories />
       <MostPopular />
