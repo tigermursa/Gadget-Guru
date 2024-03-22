@@ -1,4 +1,10 @@
-import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
+import {
+  Button,
+  Card,
+  CardBody,
+  CardFooter,
+  CardHeader,
+} from "@nextui-org/react";
 import Image from "next/image";
 
 const dbData = [
@@ -107,16 +113,19 @@ const dbData = [
   },
 ];
 
+
 const FlashSale = () => {
   return (
     <div className="">
       {/* TITLE */}
       <div className="flex justify-between ms-28 me-28 mb-10 ">
         <h1 className="font-semibold text-2xl">Flash Sale</h1>
-        <Button variant="ghost" color="primary" className="">View All</Button>
+        <Button variant="ghost" color="primary" className="">
+          View All
+        </Button>
       </div>
-      {/* cards */}
-      <div className="flex justify-center ">
+      {/* cards first row only */}
+      <div className="flex justify-center   ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
           {dbData.map((phone, index) => (
             <div key={index} className="relative">
@@ -139,6 +148,53 @@ const FlashSale = () => {
                     {phone.priceTwo} / {phone.specMicroTwo}
                   </p>
                 </CardHeader>
+              </Card>
+              {/* Notification badge */}
+              {phone.tag && (
+                <div
+                  className={`bg-${
+                    phone.tag === "new" ? "primary" : "secondary"
+                  } text-white w-30 h-6 p-2 flex items-center justify-center rounded-full absolute -top-2 -right-2 text-xs z-40`}
+                >
+                  {phone.tag} OFF
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
+      {/* card 2nd row  */}
+      <div className="flex justify-center  mt-10 ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-10">
+          {dbData.map((phone, index) => (
+            <div key={index} className="relative">
+              <Card
+                isFooterBlurred
+                radius="lg"
+                className="border-none min-w-[600px] min-h-[300px] flex justify-center items-center "
+              >
+                <div className=" flex justify-center items-center">
+                  <div>
+                    <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
+                      <h4 className="font-bold text-large">{phone.name}</h4>
+                      <p className="text-small uppercase font-bold text-red-600">
+                        {phone.priceOne} / {phone.specMicroOne}
+                      </p>
+                      <p className="text-small uppercase font-bold text-red-600">
+                        {phone.priceTwo} / {phone.specMicroTwo}
+                      </p>
+                    </CardHeader>
+                  </div>
+                  <div>
+                    <Image
+                      alt="Woman listing to music"
+                      className="object-cover"
+                      height={300}
+                      src={phone.image}
+                      width={300}
+                    />
+                  </div>
+                </div>
               </Card>
               {/* Notification badge */}
               {phone.tag && (
