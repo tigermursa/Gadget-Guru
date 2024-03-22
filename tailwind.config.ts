@@ -25,7 +25,7 @@ const config: Config = {
         primary: '#38c4dc',
         secondary: '#ff7f50',
         blacks: '#333333',
-        orange: '#FF7A30',
+        red: '#FF7A30',
       },
     },
   },

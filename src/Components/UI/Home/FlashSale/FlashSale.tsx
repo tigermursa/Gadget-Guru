@@ -1,6 +1,61 @@
 import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
 import Image from "next/image";
 
+const dbData = [
+  {
+    image:
+      "https://image01.realme.net/general/20240222/1708594082265294bfbb7c7db4a739201637fabcbea3b.webp.webp",
+    name: "realme Note 50",
+    priceOne: "10,999",
+    specMicroOne: "4+64 GB",
+    priceTwo: "11,999",
+    specMicroTwo: "6-128-GB",
+    tag: "new",
+    fullSpec: {
+      operatingSystem: "Android 12 with realme UI 4.0",
+      processor: "MediaTek Helio G80",
+      display: "6.5-inch IPS LCD, Full HD+ (2400 x 1080 pixels)",
+      cameras: {
+        main: "48 MP, f/1.8",
+        ultraWide: "8 MP, f/2.2",
+        macro: "2 MP, f/2.4",
+        depth: "2 MP, f/2.4",
+      },
+      battery: "5000 mAh",
+      charging: "18W Fast Charging",
+      dimensions: "162.5 x 76.8 x 8.9 mm",
+      weight: "195 grams",
+      colors: ["Aurora Blue", "Aurora Green", "Aurora White"],
+    },
+  },
+  {
+    image:
+      "https://image01.realme.net/general/20240212/170771390326093432f8910ab493fb253eaa52ef0b057.png.webp",
+    name: "realme Note 20",
+    priceOne: "13,999",
+    specMicroOne: "4+64 GB",
+    priceTwo: "17,999",
+    specMicroTwo: "8-128-GB",
+    tag: "15% OFF",
+    fullSpec: {
+      operatingSystem: "Android 13 with realme UI 4.0",
+      processor: "MediaTek Helio G80",
+      display: "6.5-inch IPS LCD, Full HD+ (2400 x 1080 pixels)",
+      cameras: {
+        main: "64 MP, f/1.8",
+        ultraWide: "8 MP, f/2.2",
+        macro: "2 MP, f/2.4",
+        depth: "2 MP, f/2.4",
+      },
+      battery: "6000 mAh",
+      charging: "22W Fast Charging",
+      dimensions: "162.5 x 76.8 x 8.9 mm",
+      weight: "185 grams",
+      colors: ["Aurora Blue", "Aurora Green", "Aurora White"],
+    },
+  },
+];
+
 const FlashSale = () => {
   return (
     <div className="">
@@ -10,79 +65,41 @@ const FlashSale = () => {
       </div>
       {/* cards */}
       <div className="flex justify-center ">
-        <div className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-10">
-          <div>
-            <Card className="py-4 max-w-[350px]">
-              <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <p className="text-tiny uppercase font-bold">Daily Mix</p>
-                <small className="text-default-500">12 Tracks</small>
-                <h4 className="font-bold text-large">Frontend Radio</h4>
-              </CardHeader>
-              <CardBody className="overflow-visible py-2">
-                <Image
-                  alt="Card background"
-                  className="object-cover rounded-xl"
-                  src="https://images.unsplash.com/photo-1585144860106-998ca0f2922a?q=80&w=2104&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  width={270}
-                  height={270}
-                />
-              </CardBody>
-            </Card>
-          </div>
-          <div>
-            <Card className="py-4 max-w-[350px]">
-              <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <p className="text-tiny uppercase font-bold">Daily Mix</p>
-                <small className="text-default-500">12 Tracks</small>
-                <h4 className="font-bold text-large">Frontend Radio</h4>
-              </CardHeader>
-              <CardBody className="overflow-visible py-2">
-                <Image
-                  alt="Card background"
-                  className="object-cover rounded-xl"
-                  src="https://images.unsplash.com/photo-1585144860106-998ca0f2922a?q=80&w=2104&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  width={270}
-                  height={270}
-                />
-              </CardBody>
-            </Card>
-          </div>
-          <div>
-            <Card className="py-4 max-w-[350px]">
-              <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <p className="text-tiny uppercase font-bold">Daily Mix</p>
-                <small className="text-default-500">12 Tracks</small>
-                <h4 className="font-bold text-large">Frontend Radio</h4>
-              </CardHeader>
-              <CardBody className="overflow-visible py-2">
-                <Image
-                  alt="Card background"
-                  className="object-cover rounded-xl"
-                  src="https://images.unsplash.com/photo-1585144860106-998ca0f2922a?q=80&w=2104&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  width={270}
-                  height={270}
-                />
-              </CardBody>
-            </Card>
-          </div>
-          <div>
-            <Card className="py-4 max-w-[350px]">
-              <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <p className="text-tiny uppercase font-bold">Daily Mix</p>
-                <small className="text-default-500">12 Tracks</small>
-                <h4 className="font-bold text-large">Frontend Radio</h4>
-              </CardHeader>
-              <CardBody className="overflow-visible py-2">
-                <Image
-                  alt="Card background"
-                  className="object-cover rounded-xl"
-                  src="https://images.unsplash.com/photo-1585144860106-998ca0f2922a?q=80&w=2104&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                  width={270}
-                  height={270}
-                />
-              </CardBody>
-            </Card>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
+          {dbData.map((phone, index) => (
+            <div key={index} className="relative">
+              <Card className="py-3 max-w-[350px] rounded-sm">
+                <CardBody className="overflow-visible py-0">
+                  <Image
+                    alt={phone.name}
+                    className="object-cover rounded-sm"
+                    src={phone.image}
+                    width={270}
+                    height={270}
+                  />
+                </CardBody>
+                <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
+                  <h4 className="font-bold text-large">{phone.name}</h4>
+                  <p className="text-small uppercase font-bold text-red-600">
+                    {phone.priceOne} / {phone.specMicroOne}
+                  </p>
+                  <p className="text-small uppercase font-bold text-red-600">
+                    {phone.priceTwo} / {phone.specMicroTwo}
+                  </p>
+                </CardHeader>
+              </Card>
+              {/* Notification badge */}
+              {phone.tag && (
+                <div
+                  className={`bg-${
+                    phone.tag === "new" ? "primary" : "red"
+                  } text-white w-30 h-6 p-2 flex items-center justify-center rounded-full absolute -top-2 -right-2 text-xs z-40`}
+                >
+                  {phone.tag}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </div>
