@@ -10,7 +10,7 @@ const dbData = [
     specMicroOne: "4+64 GB",
     priceTwo: "11,999",
     specMicroTwo: "6-128-GB",
-    tag: "new",
+    tag: "11%",
     fullSpec: {
       operatingSystem: "Android 12 with realme UI 4.0",
       processor: "MediaTek Helio G80",
@@ -36,7 +36,58 @@ const dbData = [
     specMicroOne: "4+64 GB",
     priceTwo: "17,999",
     specMicroTwo: "8-128-GB",
-    tag: "15% OFF",
+    tag: "15%",
+    fullSpec: {
+      operatingSystem: "Android 13 with realme UI 4.0",
+      processor: "MediaTek Helio G80",
+      display: "6.5-inch IPS LCD, Full HD+ (2400 x 1080 pixels)",
+      cameras: {
+        main: "64 MP, f/1.8",
+        ultraWide: "8 MP, f/2.2",
+        macro: "2 MP, f/2.4",
+        depth: "2 MP, f/2.4",
+      },
+      battery: "6000 mAh",
+      charging: "22W Fast Charging",
+      dimensions: "162.5 x 76.8 x 8.9 mm",
+      weight: "185 grams",
+      colors: ["Aurora Blue", "Aurora Green", "Aurora White"],
+    },
+  },
+  {
+    image: "https://image01.realme.net/general/20221017/1665997264645.png.webp",
+    name: "realme C30",
+    priceOne: "13,999",
+    specMicroOne: "4+64 GB",
+    priceTwo: "17,999",
+    specMicroTwo: "8-128-GB",
+    tag: "17%",
+    fullSpec: {
+      operatingSystem: "Android 13 with realme UI 4.0",
+      processor: "MediaTek Helio G80",
+      display: "6.5-inch IPS LCD, Full HD+ (2400 x 1080 pixels)",
+      cameras: {
+        main: "64 MP, f/1.8",
+        ultraWide: "8 MP, f/2.2",
+        macro: "2 MP, f/2.4",
+        depth: "2 MP, f/2.4",
+      },
+      battery: "6000 mAh",
+      charging: "22W Fast Charging",
+      dimensions: "162.5 x 76.8 x 8.9 mm",
+      weight: "185 grams",
+      colors: ["Aurora Blue", "Aurora Green", "Aurora White"],
+    },
+  },
+  {
+    image:
+      "https://image01.realme.net/general/20240212/170771390326093432f8910ab493fb253eaa52ef0b057.png.webp",
+    name: "realme Note 20",
+    priceOne: "13,999",
+    specMicroOne: "4+64 GB",
+    priceTwo: "17,999",
+    specMicroTwo: "8-128-GB",
+    tag: "15%",
     fullSpec: {
       operatingSystem: "Android 13 with realme UI 4.0",
       processor: "MediaTek Helio G80",
@@ -59,9 +110,10 @@ const dbData = [
 const FlashSale = () => {
   return (
     <div className="">
-      <div className="flex justify-between ">
-        <h1>Flash Sale</h1>
-        <Button>View All</Button>
+      {/* TITLE */}
+      <div className="flex justify-between ms-28 me-28 mb-10 ">
+        <h1 className="font-semibold text-2xl">Flash Sale</h1>
+        <Button variant="ghost" color="primary" className="">View All</Button>
       </div>
       {/* cards */}
       <div className="flex justify-center ">
@@ -92,10 +144,10 @@ const FlashSale = () => {
               {phone.tag && (
                 <div
                   className={`bg-${
-                    phone.tag === "new" ? "primary" : "red"
+                    phone.tag === "new" ? "primary" : "secondary"
                   } text-white w-30 h-6 p-2 flex items-center justify-center rounded-full absolute -top-2 -right-2 text-xs z-40`}
                 >
-                  {phone.tag}
+                  {phone.tag} OFF
                 </div>
               )}
             </div>

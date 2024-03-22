@@ -116,7 +116,7 @@ const NavigationBar = () => {
               <FaCartShopping />
             </Link>
             {/* Notification badge */}
-            <div className="bg-red-500 text-white w-4 h-4 flex items-center justify-center rounded-full absolute -top-2 -right-2 text-xs">
+            <div className="bg-secondary text-white w-4 h-4 flex items-center justify-center rounded-full absolute -top-2 -right-2 text-xs">
               5 {/* Your notification count */}
             </div>
           </NavbarItem>
