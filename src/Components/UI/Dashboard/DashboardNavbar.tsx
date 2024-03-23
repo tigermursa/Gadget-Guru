@@ -3,10 +3,12 @@ import Link from "next/link";
 
 const DashboardNavbar = () => {
   return (
-    <div className="flex mx-auto justify-center items-center bg-cyan-100 py-3">
+    <div className="flex mx-auto justify-center items-center bg-cyan-900 py-3 m-0">
       <div className=" w-[95%] flex justify-between items-center ms-3 me-3  ">
         <div>
-          <p className="font-bold text-inherit">ACME</p>
+          <p className="font-bold text-inherit text-xl text-white">
+            Gadget<span className="text-secondary">Guru </span> Dashboard
+          </p>
         </div>
 
         <div className="flex justify-center items-center gap-4">
@@ -21,7 +23,7 @@ const DashboardNavbar = () => {
               />
             </Link>
           </div>
-          <div className="text-sm font-semibold">
+          <div className="text-sm font-semibold text-white">
             <h4>Mursalin Hossain</h4>
             <p>Admin</p>
           </div>

@@ -1,11 +1,11 @@
-
+import DashboardComponent from "@/Components/UI/Dashboard/DashboardComponent";
 
 const DashBoard = () => {
-    return (
-        <div>
-            <h1>Hello Dashboard</h1>
-        </div>
-    );
+  return (
+    <div>
+      <DashboardComponent />
+    </div>
+  );
 };
 
 export default DashBoard;

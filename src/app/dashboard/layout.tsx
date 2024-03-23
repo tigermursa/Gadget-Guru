@@ -6,7 +6,7 @@ const DashBoardLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div>
       <DashboardNavbar />
-      <div className="grid grid-cols-12 border">
+      <div className="grid grid-cols-12">
         <Sidebar />
         <div className="col-span-10">{children}</div>
       </div>
