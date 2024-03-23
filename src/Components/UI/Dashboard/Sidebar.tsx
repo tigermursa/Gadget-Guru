@@ -5,10 +5,11 @@ import { usePathname } from "next/navigation";
 const Sidebar = () => {
   const menuItems = [
     { text: "Home", href: "/home" },
-    { text: "Phones", href: "/dashboard/phone" },
+    { text: "Phones", href: "/dashboard/phones" },
     { text: "Products", href: "/dashboard/products" },
     { text: "Add-Phone", href: "/dashboard/add-phone" },
     { text: "Add-Product", href: "/dashboard/add-product" },
+    { text: "Update-Phones", href: "/dashboard/update-phone" },
     { text: "Update-products", href: "/dashboard/update-products" },
   ];
 
@@ -23,26 +24,25 @@ const Sidebar = () => {
       <div>
         <div className=" flex flex-col gap-3">
           {menuItems.map((item, index) => (
-            <div
-              key={`${item}-${index}`}
-              className={
-                isActive(item.href)
-                  ? "border  bg-gray-800 rounded-lg flex justify-center shadow-2xl p-2 cursor-pointer  hover:bg-gray-700"
-                  : "border  bg-gray-300 rounded-lg flex justify-center  p-2  cursor-pointer hover:bg-gray-200"
-              }
-            >
-              <div>
-                <Link
+            <div key={`${item}-${index}`}>
+              <Link
+                href={item.href}
+                className={
+                  isActive(item.href)
+                    ? "text-white font-bold "
+                    : "text-gray-900 font-semibold "
+                }
+              >
+                <div
                   className={
                     isActive(item.href)
-                      ? "text-white font-bold "
-                      : "text-gray-900 font-semibold "
+                      ? "border  bg-gray-800 rounded-lg flex justify-center shadow-2xl p-2 cursor-pointer  hover:bg-gray-700"
+                      : "border  bg-gray-300 rounded-lg flex justify-center  p-2  cursor-pointer hover:bg-gray-200"
                   }
-                  href={item.href}
                 >
-                  {item.text}
-                </Link>
-              </div>
+                  <div>{item.text}</div>
+                </div>
+              </Link>
             </div>
           ))}
         </div>
