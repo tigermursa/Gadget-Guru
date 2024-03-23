@@ -40,7 +40,7 @@ const Sidebar = () => {
                       : "border  bg-gray-300 rounded-lg flex justify-center  p-2  cursor-pointer hover:bg-gray-200"
                   }
                 >
-                  <div>{item.text}</div>
+                  <div className="flex gap-2 items-center">{item.text}</div>
                 </div>
               </Link>
             </div>
