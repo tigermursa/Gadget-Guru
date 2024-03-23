@@ -6,12 +6,15 @@ import {
   CardHeader,
 } from "@nextui-org/react";
 import Image from "next/image";
+import { IoIosFlash } from "react-icons/io";
 
 const dbData = [
   {
     image:
       "https://image01.realme.net/general/20240222/1708594082265294bfbb7c7db4a739201637fabcbea3b.webp.webp",
+    brand: "realme",
     name: "realme Note 50",
+    price: 10999,
     priceOne: "10,999",
     specMicroOne: "4+64 GB",
     priceTwo: "11,999",
@@ -113,19 +116,20 @@ const dbData = [
   },
 ];
 
-
 const FlashSale = () => {
   return (
-    <div className=" mb-20">
+    <div className=" mb-20 mt-20">
       {/* TITLE */}
       <div className="flex justify-between ms-28 me-28 mb-10 ">
-        <h1 className="font-semibold text-2xl">Flash Sale</h1>
+        <h1 className="font-semibold text-2xl flex">
+          Flash Sale < IoIosFlash className="text-secondary" />
+        </h1>
         <Button variant="ghost" color="primary" className="">
           View All
         </Button>
       </div>
       {/* cards first row only */}
-      <div className="flex justify-center   ">
+      <div className="flex justify-center cursor-pointer  ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
           {dbData.map((phone, index) => (
             <div key={index} className="relative">
@@ -133,7 +137,7 @@ const FlashSale = () => {
                 <CardBody className="overflow-visible py-0">
                   <Image
                     alt={phone.name}
-                    className="object-cover rounded-sm"
+                    className="object-cover rounded-sm transition-transform duration-300 hover:scale-105"
                     src={phone.image}
                     width={270}
                     height={270}
@@ -164,7 +168,7 @@ const FlashSale = () => {
         </div>
       </div>
       {/* card 2nd row  */}
-      <div className="flex justify-center  mt-10 ">
+      <div className="flex justify-center  mt-10 cursor-pointer ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-10">
           {dbData.map((phone, index) => (
             <div key={index} className="relative">
@@ -176,7 +180,7 @@ const FlashSale = () => {
                 <div className=" flex justify-center items-center">
                   <div>
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
-                      <h4 className="font-bold text-large">{phone.name}</h4>
+                      <h4 className="font-bold text-2xl">{phone.name}</h4>
                       <p className="text-small uppercase font-bold text-red-600">
                         {phone.priceOne} / {phone.specMicroOne}
                       </p>
@@ -185,10 +189,10 @@ const FlashSale = () => {
                       </p>
                     </CardHeader>
                   </div>
-                  <div>
+                  <div >
                     <Image
                       alt="Woman listing to music"
-                      className="object-cover"
+                      className="object-cover transition-transform duration-300 hover:scale-105 "
                       height={280}
                       src={phone.image}
                       width={280}

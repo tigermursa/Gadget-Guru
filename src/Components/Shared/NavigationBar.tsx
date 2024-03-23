@@ -125,6 +125,11 @@ const NavigationBar = () => {
               <FaUserLarge />
             </Link>
           </NavbarItem>
+          <NavbarItem>
+            <Link color="foreground" href="/dashboard" className="text-lg text-gray-500">
+             Dashboard
+            </Link>
+          </NavbarItem>
         </NavbarContent>
 
         {/* Nav items for small device */}
