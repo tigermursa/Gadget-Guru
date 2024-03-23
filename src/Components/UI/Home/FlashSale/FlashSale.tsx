@@ -6,6 +6,7 @@ import {
   CardHeader,
 } from "@nextui-org/react";
 import Image from "next/image";
+import Link from "next/link";
 import { IoIosFlash } from "react-icons/io";
 
 const dbData = [
@@ -122,11 +123,13 @@ const FlashSale = () => {
       {/* TITLE */}
       <div className="flex justify-between ms-28 me-28 mb-10 ">
         <h1 className="font-semibold text-2xl flex">
-          Flash Sale < IoIosFlash className="text-secondary" />
+          Flash Sale <IoIosFlash className="text-secondary" />
         </h1>
-        <Button variant="ghost" color="primary" className="">
-          View All
-        </Button>
+        <Link href={"/flash-sale"}>
+          <Button variant="ghost" color="primary" className="">
+            View All
+          </Button>
+        </Link>
       </div>
       {/* cards first row only */}
       <div className="flex justify-center cursor-pointer  ">
@@ -189,7 +192,7 @@ const FlashSale = () => {
                       </p>
                     </CardHeader>
                   </div>
-                  <div >
+                  <div>
                     <Image
                       alt="Woman listing to music"
                       className="object-cover transition-transform duration-300 hover:scale-105 "

@@ -1,6 +1,6 @@
 const FlashSalePage = () => {
   return (
-    <div>
+    <div className="container mx-auto h-screen">
       <h1>This is flash sale page</h1>
     </div>
   );

@@ -7,10 +7,13 @@ import BrandsMarquee from "@/Components/UI/Marquee/BrandsMarquee";
 const HomePage = () => {
   return (
     <div>
-      <FlashSale />
-      <TopCategories />
-      <MostPopular />
-      <BrandsMarquee />
+      <HeroCarousel />
+      <div className="container mx-auto">
+        <FlashSale />
+        <TopCategories />
+        <MostPopular />
+        <BrandsMarquee />
+      </div>
     </div>
   );
 };

@@ -4,12 +4,11 @@ import HeroCarousel from "@/Components/UI/Home/HeroCarousel/HeroCarousel";
 
 const layout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <div>
+    <>
       <NavigationBar />
-      <HeroCarousel />
-      <div className="container mx-auto  ">{children}</div>
+      {children}
       <FooterPage />
-    </div>
+    </>
   );
 };
 
