@@ -1,5 +1,6 @@
 import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
 import Image from "next/image";
+import Link from "next/link";
 const dbData = [
   {
     image:
@@ -145,10 +146,11 @@ const MostPopular = () => {
             quas.
           </p>
         </div>
-
-        <Button variant="ghost" color="primary" className="">
-          View All
-        </Button>
+        <Link href={"/products"}>
+          <Button variant="ghost" color="primary" className="">
+            View All
+          </Button>
+        </Link>
       </div>
       {/* cards first row only */}
       <div className="flex justify-center mt-10  ">
