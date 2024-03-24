@@ -1,6 +1,7 @@
 "use client";
 
-import React from "react";
+import { useAddDataMutation } from "@/redux/api/baseApi";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 
 const AddPhonePage = () => {
@@ -10,8 +11,19 @@ const AddPhonePage = () => {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data: any) => {
-    console.log(data); // You can handle form submission here
+  const [addData, { isLoading, isError }] = useAddDataMutation();
+  //   const [status, setStatus] = useState(null);
+
+  const onSubmit = async (data: any) => {
+    try {
+      await addData(data);
+      //   setStatus("success");
+      console.log("Data added successfully!");
+      console.log(data);
+    } catch (error) {
+      //   setStatus("error");
+      console.error("Error adding data:", error);
+    }
   };
 
   return (
@@ -40,7 +52,7 @@ const AddPhonePage = () => {
                 </span>
               )}
             </div>
-            <div className="mb-4 mb-4 w-full">
+            <div className="mb-4  w-full">
               <label
                 htmlFor="name"
                 className="block text-sm font-medium text-gray-700"
@@ -121,12 +133,12 @@ const AddPhonePage = () => {
             </div>
             {/* inside two boolean value */}
             <div className="flex gap-10 items-center">
-              <div className="mb-4 ">
+              <div className="mb-4 w-full ">
                 <label
                   htmlFor="flashSale"
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-xs font-medium text-gray-700"
                 >
-                  Flash Sale:
+                  Flash:
                 </label>
                 <input
                   id="flashSale"
@@ -308,7 +320,7 @@ const AddPhonePage = () => {
               id="descriptionMini"
               {...register("descriptionMini", { required: true })}
               className="mt-1 p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm resize-y"
-              rows={4} // Adjust the number of rows as needed
+              rows={3} // Adjust the number of rows as needed
             />
             {errors.descriptionMini && (
               <span className="text-red-500 text-sm">
@@ -337,7 +349,7 @@ const AddPhonePage = () => {
             )}
           </div>
 
-          {/* <div className="mb-4 hidden">
+          <div className="mb-4">
             <label
               htmlFor="isDeleted"
               className="block text-sm font-medium text-gray-700"
@@ -347,11 +359,10 @@ const AddPhonePage = () => {
             <input
               id="isDeleted"
               type="checkbox"
-              defaultValue={false}
               {...register("isDeleted")}
               className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
             />
-          </div> */}
+          </div>
           <button
             type="submit"
             className="w-full px-4 py-2 bg-primary text-white rounded-md hover:bg-indigo-700"
