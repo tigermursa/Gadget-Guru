@@ -15,8 +15,8 @@ const AddPhonePage = () => {
   };
 
   return (
-    <div className="flex justify-center items-center  border">
-      <div className="mx-auto mt-8 p-6 bg-white w-[900px]">
+    <div className="flex justify-center items-center">
+      <div className="mx-auto mt-8 p-6 bg-white w-[700px]">
         <h1 className="text-2xl font-bold mb-4">Add a Phone</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           {/* first 2 */}
@@ -60,9 +60,9 @@ const AddPhonePage = () => {
               )}
             </div>
           </div>
-          {/* 2nd 3 fields */}
-          <div className="">
-            <div className="mb-4">
+          {/* 2nd 4 fields */}
+          <div className="flex  gap-4 justify-between">
+            <div className="mb-4 w-full">
               <label
                 htmlFor="brand"
                 className="block text-sm font-medium text-gray-700"
@@ -81,7 +81,7 @@ const AddPhonePage = () => {
                 </span>
               )}
             </div>
-            <div className="mb-4">
+            <div className="mb-4 w-full">
               <label
                 htmlFor="categories"
                 className="block text-sm font-medium text-gray-700"
@@ -100,8 +100,28 @@ const AddPhonePage = () => {
                 </span>
               )}
             </div>
-            <div>
-              <div className="mb-4">
+            <div className="mb-4 w-full">
+              <label
+                htmlFor="rating"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Rating:
+              </label>
+              <input
+                id="rating"
+                type="number"
+                {...register("rating", { required: true })}
+                className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              />
+              {errors.rating && (
+                <span className="text-red-500 text-sm">
+                  This field is required
+                </span>
+              )}
+            </div>
+            {/* inside two boolean value */}
+            <div className="flex gap-10 items-center">
+              <div className="mb-4 ">
                 <label
                   htmlFor="flashSale"
                   className="block text-sm font-medium text-gray-700"
@@ -112,7 +132,7 @@ const AddPhonePage = () => {
                   id="flashSale"
                   type="checkbox"
                   {...register("flashSale")}
-                  className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 h-[20px] p-2 border block w-full border-gray-300  shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-full"
                 />
               </div>
               <div className="mb-4">
@@ -120,36 +140,161 @@ const AddPhonePage = () => {
                   htmlFor="isNew"
                   className="block text-sm font-medium text-gray-700"
                 >
-                  Is New:
+                  New:
                 </label>
                 <input
                   id="isNew"
                   type="checkbox"
                   {...register("isNew")}
-                  className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 h-[20px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                 />
               </div>
             </div>
           </div>
 
-          <div className="mb-4">
-            <label
-              htmlFor="price"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Price:
-            </label>
-            <input
-              id="price"
-              type="number"
-              {...register("price", { required: true })}
-              className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            />
-            {errors.price && (
-              <span className="text-red-500 text-sm">
-                This field is required
-              </span>
-            )}
+          {/* 3rd prices 3 fields */}
+
+          <div className="flex gap-4 justify-between">
+            <div className="mb-4 w-full">
+              <label
+                htmlFor="price"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Main Price:
+              </label>
+              <input
+                id="price"
+                type="number"
+                {...register("price", { required: true })}
+                className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              />
+              {errors.price && (
+                <span className="text-red-500 text-sm">
+                  This field is required
+                </span>
+              )}
+            </div>
+            <div className="mb-4 w-full">
+              <label
+                htmlFor="priceV1"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Price V1:
+              </label>
+              <input
+                id="priceV1"
+                type="text"
+                {...register("priceV1", { required: true })}
+                className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              />
+              {errors.priceV1 && (
+                <span className="text-red-500 text-sm">
+                  This field is required
+                </span>
+              )}
+            </div>
+            <div className="mb-4 w-full">
+              <label
+                htmlFor="priceV2"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Price V2:
+              </label>
+              <input
+                id="priceV2"
+                type="text"
+                {...register("priceV2", { required: true })}
+                className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              />
+              {errors.priceV2 && (
+                <span className="text-red-500 text-sm">
+                  This field is required
+                </span>
+              )}
+            </div>
+          </div>
+
+          {/* 4th with 4 fields */}
+
+          <div className="flex gap-4">
+            <div className="mb-4 w-full">
+              <label
+                htmlFor="review"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Review:
+              </label>
+              <input
+                id="review"
+                type="number"
+                {...register("review", { required: true })}
+                className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              />
+              {errors.review && (
+                <span className="text-red-500 text-sm">
+                  This field is required
+                </span>
+              )}
+            </div>
+
+            <div className="mb-4 w-full">
+              <label
+                htmlFor="ramV1"
+                className="block text-sm font-medium text-gray-700"
+              >
+                RAM V1:
+              </label>
+              <input
+                id="ramV1"
+                type="text"
+                {...register("ramV1", { required: true })}
+                className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              />
+              {errors.ramV1 && (
+                <span className="text-red-500 text-sm">
+                  This field is required
+                </span>
+              )}
+            </div>
+
+            <div className="mb-4 w-full">
+              <label
+                htmlFor="ramV2"
+                className="block text-sm font-medium text-gray-700"
+              >
+                RAM V2:
+              </label>
+              <input
+                id="ramV2"
+                type="text"
+                {...register("ramV2", { required: true })}
+                className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              />
+              {errors.ramV2 && (
+                <span className="text-red-500 text-sm">
+                  This field is required
+                </span>
+              )}
+            </div>
+            <div className="mb-4 w-full">
+              <label
+                htmlFor="tag"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Tag:
+              </label>
+              <input
+                id="tag"
+                type="text"
+                {...register("tag", { required: true })}
+                className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              />
+              {errors.tag && (
+                <span className="text-red-500 text-sm">
+                  This field is required
+                </span>
+              )}
+            </div>
           </div>
 
           <div className="mb-4">
@@ -159,11 +304,11 @@ const AddPhonePage = () => {
             >
               Mini Description:
             </label>
-            <input
+            <textarea
               id="descriptionMini"
-              type="text"
               {...register("descriptionMini", { required: true })}
-              className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm resize-y"
+              rows={4} // Adjust the number of rows as needed
             />
             {errors.descriptionMini && (
               <span className="text-red-500 text-sm">
@@ -171,6 +316,7 @@ const AddPhonePage = () => {
               </span>
             )}
           </div>
+
           <div className="mb-4">
             <label
               htmlFor="description"
@@ -178,146 +324,13 @@ const AddPhonePage = () => {
             >
               Full Description:
             </label>
-            <input
+            <textarea
               id="description"
-              type="text"
               {...register("description", { required: true })}
-              className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+              className="mt-1 p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm resize-y"
+              rows={6} // Adjust the number of rows as needed
             />
-            {errors.description && (
-              <span className="text-red-500 text-sm">
-                This field is required
-              </span>
-            )}
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="review"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Review:
-            </label>
-            <input
-              id="review"
-              type="number"
-              {...register("review", { required: true })}
-              className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            />
-            {errors.review && (
-              <span className="text-red-500 text-sm">
-                This field is required
-              </span>
-            )}
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="rating"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Rating:
-            </label>
-            <input
-              id="rating"
-              type="number"
-              {...register("rating", { required: true })}
-              className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            />
-            {errors.rating && (
-              <span className="text-red-500 text-sm">
-                This field is required
-              </span>
-            )}
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="priceV1"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Price V1:
-            </label>
-            <input
-              id="priceV1"
-              type="text"
-              {...register("priceV1", { required: true })}
-              className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            />
-            {errors.priceV1 && (
-              <span className="text-red-500 text-sm">
-                This field is required
-              </span>
-            )}
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="ramV1"
-              className="block text-sm font-medium text-gray-700"
-            >
-              RAM V1:
-            </label>
-            <input
-              id="ramV1"
-              type="text"
-              {...register("ramV1", { required: true })}
-              className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            />
-            {errors.ramV1 && (
-              <span className="text-red-500 text-sm">
-                This field is required
-              </span>
-            )}
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="priceV2"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Price V2:
-            </label>
-            <input
-              id="priceV2"
-              type="text"
-              {...register("priceV2", { required: true })}
-              className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            />
-            {errors.priceV2 && (
-              <span className="text-red-500 text-sm">
-                This field is required
-              </span>
-            )}
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="ramV2"
-              className="block text-sm font-medium text-gray-700"
-            >
-              RAM V2:
-            </label>
-            <input
-              id="ramV2"
-              type="text"
-              {...register("ramV2", { required: true })}
-              className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            />
-            {errors.ramV2 && (
-              <span className="text-red-500 text-sm">
-                This field is required
-              </span>
-            )}
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="tag"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Tag:
-            </label>
-            <input
-              id="tag"
-              type="text"
-              {...register("tag", { required: true })}
-              className="mt-1 h-[40px] p-2 border block w-full border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
-            />
-            {errors.tag && (
+            {errors.descriptionMini && (
               <span className="text-red-500 text-sm">
                 This field is required
               </span>
