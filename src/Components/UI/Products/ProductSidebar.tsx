@@ -3,7 +3,7 @@ import React from "react";
 
 const ProductSidebar = () => {
   return (
-    <aside className="border lg:p-5 col-span-2 h-[100vh] sticky top-0 left-0 overflow-auto">
+    <aside className=" lg:p-5 col-span-2 h-[100vh] sticky top-0 left-0 overflow-auto">
       <div>
         {/* Price Range  */}
         <div className="border flex flex-col justify-center items-center p-5 mb-5">
