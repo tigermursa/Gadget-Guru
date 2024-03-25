@@ -1,3 +1,4 @@
+import getPhoneData from "@/lib/getPhoneData";
 import {
   Button,
   Card,
@@ -9,115 +10,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { IoIosFlash } from "react-icons/io";
 
-const dbData = [
-  {
-    image:
-      "https://image01.realme.net/general/20240222/1708594082265294bfbb7c7db4a739201637fabcbea3b.webp.webp",
-    brand: "realme",
-    name: "realme Note 50",
-    price: 10999,
-    priceOne: "10,999",
-    specMicroOne: "4+64 GB",
-    priceTwo: "11,999",
-    specMicroTwo: "6-128-GB",
-    tag: "11%",
-    fullSpec: {
-      operatingSystem: "Android 12 with realme UI 4.0",
-      processor: "MediaTek Helio G80",
-      display: "6.5-inch IPS LCD, Full HD+ (2400 x 1080 pixels)",
-      cameras: {
-        main: "48 MP, f/1.8",
-        ultraWide: "8 MP, f/2.2",
-        macro: "2 MP, f/2.4",
-        depth: "2 MP, f/2.4",
-      },
-      battery: "5000 mAh",
-      charging: "18W Fast Charging",
-      dimensions: "162.5 x 76.8 x 8.9 mm",
-      weight: "195 grams",
-      colors: ["Aurora Blue", "Aurora Green", "Aurora White"],
-    },
-  },
-  {
-    image:
-      "https://image01.realme.net/general/20240212/170771390326093432f8910ab493fb253eaa52ef0b057.png.webp",
-    name: "realme Note 20",
-    priceOne: "13,999",
-    specMicroOne: "4+64 GB",
-    priceTwo: "17,999",
-    specMicroTwo: "8-128-GB",
-    tag: "15%",
-    fullSpec: {
-      operatingSystem: "Android 13 with realme UI 4.0",
-      processor: "MediaTek Helio G80",
-      display: "6.5-inch IPS LCD, Full HD+ (2400 x 1080 pixels)",
-      cameras: {
-        main: "64 MP, f/1.8",
-        ultraWide: "8 MP, f/2.2",
-        macro: "2 MP, f/2.4",
-        depth: "2 MP, f/2.4",
-      },
-      battery: "6000 mAh",
-      charging: "22W Fast Charging",
-      dimensions: "162.5 x 76.8 x 8.9 mm",
-      weight: "185 grams",
-      colors: ["Aurora Blue", "Aurora Green", "Aurora White"],
-    },
-  },
-  {
-    image: "https://image01.realme.net/general/20221017/1665997264645.png.webp",
-    name: "realme C30",
-    priceOne: "13,999",
-    specMicroOne: "4+64 GB",
-    priceTwo: "17,999",
-    specMicroTwo: "8-128-GB",
-    tag: "17%",
-    fullSpec: {
-      operatingSystem: "Android 13 with realme UI 4.0",
-      processor: "MediaTek Helio G80",
-      display: "6.5-inch IPS LCD, Full HD+ (2400 x 1080 pixels)",
-      cameras: {
-        main: "64 MP, f/1.8",
-        ultraWide: "8 MP, f/2.2",
-        macro: "2 MP, f/2.4",
-        depth: "2 MP, f/2.4",
-      },
-      battery: "6000 mAh",
-      charging: "22W Fast Charging",
-      dimensions: "162.5 x 76.8 x 8.9 mm",
-      weight: "185 grams",
-      colors: ["Aurora Blue", "Aurora Green", "Aurora White"],
-    },
-  },
-  {
-    image:
-      "https://image01.realme.net/general/20240212/170771390326093432f8910ab493fb253eaa52ef0b057.png.webp",
-    name: "realme Note 20",
-    priceOne: "13,999",
-    specMicroOne: "4+64 GB",
-    priceTwo: "17,999",
-    specMicroTwo: "8-128-GB",
-    tag: "15%",
-    fullSpec: {
-      operatingSystem: "Android 13 with realme UI 4.0",
-      processor: "MediaTek Helio G80",
-      display: "6.5-inch IPS LCD, Full HD+ (2400 x 1080 pixels)",
-      cameras: {
-        main: "64 MP, f/1.8",
-        ultraWide: "8 MP, f/2.2",
-        macro: "2 MP, f/2.4",
-        depth: "2 MP, f/2.4",
-      },
-      battery: "6000 mAh",
-      charging: "22W Fast Charging",
-      dimensions: "162.5 x 76.8 x 8.9 mm",
-      weight: "185 grams",
-      colors: ["Aurora Blue", "Aurora Green", "Aurora White"],
-    },
-  },
-];
-
-const FlashSale = () => {
+const FlashSale = async () => {
+  const data = await getPhoneData();
   return (
     <div className=" mb-20 mt-20">
       {/* TITLE */}
@@ -134,7 +28,7 @@ const FlashSale = () => {
       {/* cards first row only */}
       <div className="flex justify-center cursor-pointer  ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
-          {dbData.map((phone, index) => (
+          {data?.data?.slice(0,4).map((phone: any, index: number) => (
             <div key={index} className="relative">
               <Card className="py-3 max-w-[350px] rounded-sm">
                 <CardBody className="overflow-visible py-0">
@@ -149,10 +43,10 @@ const FlashSale = () => {
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
                   <h4 className="font-bold text-large">{phone.name}</h4>
                   <p className="text-small uppercase font-bold text-red-600">
-                    {phone.priceOne} / {phone.specMicroOne}
+                    {phone.priceV1} / {phone.ramV1}
                   </p>
                   <p className="text-small uppercase font-bold text-red-600">
-                    {phone.priceTwo} / {phone.specMicroTwo}
+                    {phone.priceV2} / {phone.ramV2}
                   </p>
                 </CardHeader>
               </Card>
@@ -173,7 +67,7 @@ const FlashSale = () => {
       {/* card 2nd row  */}
       <div className="flex justify-center  mt-10 cursor-pointer ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-2 gap-10">
-          {dbData.map((phone, index) => (
+          {data?.data?.slice(5,7).map((phone:any, index:any) => (
             <div key={index} className="relative">
               <Card
                 isFooterBlurred
@@ -185,10 +79,10 @@ const FlashSale = () => {
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
                       <h4 className="font-bold text-2xl">{phone.name}</h4>
                       <p className="text-small uppercase font-bold text-red-600">
-                        {phone.priceOne} / {phone.specMicroOne}
+                        {phone.priceV1} / {phone.ramV1}
                       </p>
                       <p className="text-small uppercase font-bold text-red-600">
-                        {phone.priceTwo} / {phone.specMicroTwo}
+                        {phone.priceV2} / {phone.ramV2}
                       </p>
                     </CardHeader>
                   </div>
