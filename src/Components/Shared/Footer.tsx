@@ -7,7 +7,7 @@ const FooterPage = () => {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <a href="https://flowbite.com/" className="flex items-center">
-              <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
+              <span className="self-center text-5xl font-semibold whitespace-nowrap dark:text-white">
                 Gadget<span className="text-primary">Guru</span>
               </span>
             </a>
