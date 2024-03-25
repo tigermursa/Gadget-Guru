@@ -1,3 +1,4 @@
+import CountDown from "../../Components/UI/Home/FlashsaleCoundown/CountDown";
 import FlashSale from "../../Components/UI/Home/FlashSale/FlashSale";
 import HeroCarousel from "../../Components/UI/Home/HeroCarousel/HeroCarousel";
 import MostPopular from "../../Components/UI/Home/MostPopular/MostPopular";
@@ -9,6 +10,7 @@ const HomePage = () => {
     <div>
       <HeroCarousel />
       <div className="container mx-auto">
+        <CountDown/>
         <FlashSale />
         <TopCategories />
         <MostPopular />
