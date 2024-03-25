@@ -3,7 +3,9 @@ import Image from "next/image";
 import getPhoneData from "@/lib/getPhoneData";
 const FlashSalePage = async () => {
   const data = await getPhoneData();
-  const flashSaleData = data?.data?.filter((phone: any) => phone.flashSale === true);
+  const flashSaleData = data?.data?.filter(
+    (phone: any) => phone.flashSale === true
+  );
   return (
     <div className="container mx-auto  mt-10 mb-20">
       <div className="flex justify-center cursor-pointer  ">
