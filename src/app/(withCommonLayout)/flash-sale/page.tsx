@@ -2,7 +2,11 @@ import { Card, CardBody, CardHeader } from "@nextui-org/react";
 import Image from "next/image";
 
 const FlashSalePage = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/phone/get");
+  const res = await fetch("https://gadget-guru-server-rho.vercel.app/api/v1/phone/get", {
+    next: {
+      revalidate: 3000,
+    },
+  });
   const data = await res.json();
   const flashSaleData = data?.data?.filter(
     (phone: any) => phone.flashSale === true

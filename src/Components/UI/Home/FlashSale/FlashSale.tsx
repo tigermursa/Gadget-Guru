@@ -10,7 +10,11 @@ import Link from "next/link";
 import { IoIosFlash } from "react-icons/io";
 
 const FlashSale = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/phone/get");
+  const res = await fetch("https://gadget-guru-server-rho.vercel.app/api/v1/phone/get", {
+    next: {
+      revalidate: 30,
+    },
+  });
   const data = await res.json();
   return (
     <div className=" mb-20 mt-20">
@@ -43,10 +47,10 @@ const FlashSale = async () => {
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
                   <h4 className="font-bold text-large">{phone.name}</h4>
                   <p className="text-small uppercase font-bold text-red-600">
-                    {phone.priceV1} / {phone.ramV1}
+                    &#2547; {19 + "," + phone.priceV1} / {phone.ramV1}
                   </p>
                   <p className="text-small uppercase font-bold text-red-600">
-                    {phone.priceV2} / {phone.ramV2}
+                    &#2547; {30 + "," + phone.priceV2} / {phone.ramV2}
                   </p>
                 </CardHeader>
               </Card>
@@ -79,10 +83,10 @@ const FlashSale = async () => {
                     <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
                       <h4 className="font-bold text-2xl">{phone.name}</h4>
                       <p className="text-small uppercase font-bold text-red-600">
-                        {phone.priceV1} / {phone.ramV1}
+                        &#2547; {19 + "," + phone.priceV1} / {phone.ramV1}
                       </p>
                       <p className="text-small uppercase font-bold text-red-600">
-                        {phone.priceV2} / {phone.ramV2}
+                        &#2547; {30 + "," + phone.priceV2} / {phone.ramV2}
                       </p>
                     </CardHeader>
                   </div>

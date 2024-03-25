@@ -1,16 +1,19 @@
-
 import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 
 const MostPopular = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/phone/get");
+  const res = await fetch("https://gadget-guru-server-rho.vercel.app/api/v1/phone/get", {
+    next: {
+      revalidate: 30,
+    },
+  });
   const data = await res.json();
   return (
     <div>
       <div className="flex justify-between ms-28 me-28 mb-10 ">
         <div>
-          <h1 className="font-semibold text-2xl">Most Popular Products</h1>
+          <h1 className="font-semibold text-2xl">Trending Products</h1>
           <p className="font-semibold text-sm text-gray-500 mt-5">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Natus
             fugit
@@ -43,10 +46,10 @@ const MostPopular = async () => {
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
                   <h4 className="font-bold text-large">{phone.name}</h4>
                   <p className="text-small uppercase font-bold text-red-600">
-                    {phone.priceV1} / {phone.ramV1}
+                    &#2547; {19 + "," + phone.priceV1} / {phone.ramV1}
                   </p>
                   <p className="text-small uppercase font-bold text-red-600">
-                    {phone.priceV2} / {phone.ramV2}
+                    &#2547; {30 + "," + phone.priceV2} / {phone.ramV2}
                   </p>
                 </CardHeader>
               </Card>
@@ -82,10 +85,10 @@ const MostPopular = async () => {
                 <CardHeader className="pb-0 pt-2 px-4 flex-col items-center">
                   <h4 className="font-bold text-large">{phone.name}</h4>
                   <p className="text-small uppercase font-bold text-red-600">
-                    {phone.priceV1} / {phone.ramV1}
+                    &#2547; {19 + "," + phone.priceV1} / {phone.ramV1}
                   </p>
                   <p className="text-small uppercase font-bold text-red-600">
-                    {phone.priceV2} / {phone.ramV2}
+                    &#2547; {30 + "," + phone.priceV2} / {phone.ramV2}
                   </p>
                 </CardHeader>
               </Card>

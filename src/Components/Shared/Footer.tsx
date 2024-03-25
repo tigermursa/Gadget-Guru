@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 const FooterPage = () => {
   return (
     <footer className=" dark:bg-gray-900 border-t bg-slate-30 bg-gray-200">
@@ -5,30 +7,42 @@ const FooterPage = () => {
         <div className="md:flex md:justify-between">
           <div className="mb-6 md:mb-0">
             <a href="https://flowbite.com/" className="flex items-center">
-             
               <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">
-              Gadget<span className="text-primary">Guru</span>
+                Gadget<span className="text-primary">Guru</span>
               </span>
             </a>
           </div>
           <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
             <div>
-              <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
-                Resources
-              </h2>
+              <Link href="/contact" className="hover:underline">
+                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
+                  Contact Us
+                </h2>
+              </Link>
+
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
-                  <a href="https://flowbite.com/" className="hover:underline">
-                    Flowbite
-                  </a>
+                  <Link href="/about" className="hover:underline">
+                    About Us
+                  </Link>
                 </li>
-                <li>
-                  <a
-                    href="https://tailwindcss.com/"
+                <li className="mb-4">
+                  <Link href="/categories" className="hover:underline">
+                    Categories
+                  </Link>
+                </li>
+                <li className="mb-4">
+                  <Link href="/products" className="hover:underline">
+                    Trending Products
+                  </Link>
+                </li>
+                <li className="mb-4">
+                  <Link
+                    href="/contact"
                     className="hover:underline"
                   >
-                    Tailwind CSS
-                  </a>
+                    Customer Care
+                  </Link>
                 </li>
               </ul>
             </div>
