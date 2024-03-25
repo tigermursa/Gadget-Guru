@@ -36,7 +36,7 @@ const FooterPage = () => {
             <div>
               <h1 className="mb-4 font-semibold">
                 <Link href="/about" className="hover:underline">
-                  About Us
+                  Get touch 
                 </Link>
               </h1>
               <ul className="text-gray-500 dark:text-gray-400 font-medium">
