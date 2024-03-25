@@ -35,7 +35,7 @@ const BrandsMarquee = () => {
           alt={brandName + " Logo"}
           width={100}
           height={100}
-          className="brand-logo  me-20 h-auto w-auto"
+          className="brand-logo  me-20 "
         />
       ))}
     </Marquee>

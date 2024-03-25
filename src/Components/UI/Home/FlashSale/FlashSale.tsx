@@ -10,9 +10,7 @@ import Link from "next/link";
 import { IoIosFlash } from "react-icons/io";
 
 const FlashSale = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/phone/get", {
-    cache:"force-cache"
-  });
+  const res = await fetch("http://localhost:5000/api/v1/phone/get");
   const data = await res.json();
   return (
     <div className=" mb-20 mt-20">

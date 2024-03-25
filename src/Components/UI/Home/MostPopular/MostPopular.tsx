@@ -4,9 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 const MostPopular = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/phone/get",{
-    cache:"force-cache"
-  });
+  const res = await fetch("http://localhost:5000/api/v1/phone/get");
   const data = await res.json();
   return (
     <div>

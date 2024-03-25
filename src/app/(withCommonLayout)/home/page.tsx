@@ -1,4 +1,5 @@
-import HomePage from "@/app/(withCommonLayout)/page";
+import HomePage from "../page";
+
 
 const HomeMain = () => {
   return (

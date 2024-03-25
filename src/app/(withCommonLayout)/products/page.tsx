@@ -2,9 +2,7 @@ import { Card, CardBody, CardHeader } from "@nextui-org/react";
 import Image from "next/image";
 
 const ProductPage = async () => {
-  const res = await fetch("http://localhost:5000/api/v1/phone/get",{
-    cache:"force-cache"
-  });
+  const res = await fetch("http://localhost:5000/api/v1/phone/get");
   const data = await res.json();
   return (
     <div className="container mx-auto  mt-10 mb-20">
