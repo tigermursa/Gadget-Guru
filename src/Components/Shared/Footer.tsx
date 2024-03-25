@@ -12,7 +12,7 @@ const FooterPage = () => {
               </span>
             </a>
           </div>
-          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+          <div className="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-4">
             <div>
               <Link href="/contact" className="hover:underline">
                 <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">
@@ -31,16 +31,22 @@ const FooterPage = () => {
                     Categories
                   </Link>
                 </li>
+              </ul>
+            </div>
+            <div>
+              <h1 className="mb-4 font-semibold">
+                <Link href="/about" className="hover:underline">
+                  About Us
+                </Link>
+              </h1>
+              <ul className="text-gray-500 dark:text-gray-400 font-medium">
                 <li className="mb-4">
                   <Link href="/products" className="hover:underline">
                     Trending Products
                   </Link>
                 </li>
                 <li className="mb-4">
-                  <Link
-                    href="/contact"
-                    className="hover:underline"
-                  >
+                  <Link href="/contact" className="hover:underline">
                     Customer Care
                   </Link>
                 </li>

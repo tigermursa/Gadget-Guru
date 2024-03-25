@@ -9,8 +9,6 @@ const Sidebar = () => {
     { text: "Products", href: "/dashboard/products" },
     { text: "Add-Phone", href: "/dashboard/add-phone" },
     { text: "Add-Product", href: "/dashboard/add-product" },
-    { text: "Update-Phones", href: "/dashboard/update-phone" },
-    { text: "Update-products", href: "/dashboard/update-products" },
   ];
 
   const pathname = usePathname();
