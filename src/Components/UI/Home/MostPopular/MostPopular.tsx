@@ -29,11 +29,11 @@ const MostPopular = async () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 m-2 md:m-0">
           {data?.data?.slice(5, 10).map((phone: any, index: number) => (
             <div key={index} className="relative">
-              <Card className="py-3 max-w-[200px] rounded-sm">
+              <Card className="py-3 max-w-[200px] rounded-sm cursor-pointer">
                 <CardBody className="overflow-visible py-0">
                   <Image
                     alt={phone.name}
-                    className="object-cover rounded-sm"
+                    className="object-cover rounded-sm transition-transform duration-300 hover:scale-105"
                     src={phone.image}
                     width={270}
                     height={270}
@@ -68,11 +68,11 @@ const MostPopular = async () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-10 m-2 md:m-0">
           {data?.data?.slice(0, 5).map((phone: any, index: number) => (
             <div key={index} className="relative">
-              <Card className="py-3 max-w-[200px] rounded-sm">
+              <Card className="py-3 max-w-[200px] rounded-sm cursor-pointer">
                 <CardBody className="overflow-visible py-0">
                   <Image
                     alt={phone.name}
-                    className="object-cover rounded-sm"
+                    className="object-cover rounded-sm transition-transform duration-300 hover:scale-105"
                     src={phone.image}
                     width={270}
                     height={270}

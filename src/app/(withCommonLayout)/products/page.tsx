@@ -1,10 +1,10 @@
 import { Card, CardBody, CardHeader } from "@nextui-org/react";
 import Image from "next/image";
-import getPhoneData from "@/lib/getPhoneData"
+import getPhoneData from "@/lib/getPhoneData";
 const ProductPage = async () => {
   const data = await getPhoneData();
   return (
-    <div className="container mx-auto h-screen mt-10">
+    <div className="container mx-auto  mt-10 mb-20">
       <div className="flex justify-center cursor-pointer  ">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10">
           {data?.data?.map((phone: any, index: number) => (
