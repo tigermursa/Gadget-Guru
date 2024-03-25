@@ -17,7 +17,7 @@ const TopCategories = () => {
         <div className="bg-red-100 max-w-[350px] m-h-[400px] flex justify-center items-center rounded-md overflow-hidden cursor-pointer relative">
           <Image
             src={
-              "https://d3fyizz0b46qgr.cloudfront.net/global/phones/8798624fe219327d7fc28a8de79a92c5.png"
+              "https://image01.realme.net/general/20230721/168991123977895360e15422944169c6eea8580f7e25a.png.webp"
             }
             alt=""
             width={500}

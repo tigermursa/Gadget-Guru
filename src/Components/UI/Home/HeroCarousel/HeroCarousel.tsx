@@ -42,6 +42,7 @@ const HeroCarousel = () => {
     emulateTouch={true}
     infiniteLoop={true}
     autoPlay={true}
+    showThumbs={false}
     interval={5000}
     transitionTime={1000}
     showStatus={false}
@@ -80,6 +81,7 @@ const HeroCarousel = () => {
               width={1280}
               height={700}
               alt={`Slide ${index + 1}`}
+              priority
             />
           </div>
 

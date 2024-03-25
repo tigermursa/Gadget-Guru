@@ -1,10 +1,13 @@
-import getPhoneData from "@/lib/getPhoneData";
+
 import { Button, Card, CardBody, CardHeader } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 
 const MostPopular = async () => {
-  const data = await getPhoneData();
+  const res = await fetch("http://localhost:5000/api/v1/phone/get",{
+    cache:"force-cache"
+  });
+  const data = await res.json();
   return (
     <div>
       <div className="flex justify-between ms-28 me-28 mb-10 ">

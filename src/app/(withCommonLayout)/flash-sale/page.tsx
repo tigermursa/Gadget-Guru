@@ -1,8 +1,11 @@
 import { Card, CardBody, CardHeader } from "@nextui-org/react";
 import Image from "next/image";
-import getPhoneData from "@/lib/getPhoneData";
+
 const FlashSalePage = async () => {
-  const data = await getPhoneData();
+  const res = await fetch("http://localhost:5000/api/v1/phone/get",{
+    cache:"force-cache"
+  });
+  const data = await res.json();
   const flashSaleData = data?.data?.filter(
     (phone: any) => phone.flashSale === true
   );
